@@ -15,5 +15,5 @@ signupForm.addEventListener("submit", function(event) {
     event.preventDefault();
     console.log(event.currentTarget.name.value);
     console.log(event.currentTarget.email.value);
-    console.log(event.currentTarget.agree.checked);
+    console.log(event.currentTarget.agree.checked );
 })
