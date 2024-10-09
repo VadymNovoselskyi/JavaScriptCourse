@@ -5,15 +5,22 @@
   <meta charset="UTF-8">
   <title>Censorship</title>
   <link rel="stylesheet" href="../../base.css">
+  <script src="./pixelated-face.js" defer></script>
 </head>
 
 <body>
+  <div class="controls">
+    <label for="SCALE">SCALE:</label>
+    <input type="range" min="0.35" max="3" value="1.35" name="SCALE" step="0.1">
+
+    <label for="SIZE">SIZE:</label>
+    <input type="range" min="4" max="50" value="14" name="SIZE" step="1">
+  </div>
   <div class="wrap">
     <video class="webcam"></video>
-    <canvas class="video"></canvas>
     <canvas class="face"></canvas>
+    <canvas class="blur"></canvas>
   </div>
-  <script src="./pixelated-face.js"></script>
 
   <style>
     * {
