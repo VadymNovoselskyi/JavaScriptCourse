@@ -125,12 +125,12 @@ const inventory = [
     Looping Methods
 */
 
+//faces.forEach((face) => console.log(addArms(face)));
+//console.log(faces);
+
 function addArms(face) {
     return `✋ ${face} ✋`;
 }
-
-//faces.forEach((face) => console.log(addArms(face)));
-//console.log(faces);
 
 const armedFaces = faces.map(addArms);
 //console.log(armedFaces);
@@ -141,29 +141,31 @@ const yummyToppings = toppings
 
 //console.log(yummyToppings);
 
-const cleanPeople = people.map(person => {
+const cleanPeople = people.map((person) => {
     //timestamp
     const bday = new Date(person.birthday).getTime();
-    const age = Math.floor(((Date.now() - bday) / (1000 * 60 * 60 * 24 * 365)) * 10) / 10;
+    const age =
+        Math.floor(((Date.now() - bday) / (1000 * 60 * 60 * 24 * 365)) * 10) /
+        10;
 
     return {
         age,
-        name: `${person.names.first} ${person.names.last}`
+        name: `${person.names.first} ${person.names.last}`,
     };
 });
 //console.table(cleanPeople);
 
 function totalNumbers(total, currentValue) {
     return total + currentValue;
-  }
-  
-  const allOrders = orderTotals.reduce(totalNumbers, 0);
-  console.log(allOrders);
-  
-  function reduceInventory(allInventory, item) {
-    allInventory[item.type] = (allInventory[item.type] ?? 0 )+ 1;
+}
+
+const allOrders = orderTotals.reduce(totalNumbers, 0);
+console.log(allOrders);
+
+function reduceInventory(allInventory, item) {
+    allInventory[item.type] = (allInventory[item.type] ?? 0) + 1;
     return allInventory;
-  }
-  
-  const inventoryCount = inventory.reduce(reduceInventory, {});
-  console.table(inventoryCount);
+}
+
+const inventoryCount = inventory.reduce(reduceInventory, {});
+console.table(inventoryCount);
