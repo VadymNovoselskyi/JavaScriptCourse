@@ -32,5 +32,4 @@ modalOuter.addEventListener("click", function (event) {
 
 function checkForEsc(event) {
     if (event.key == "Escape") closeModal();
-    else console.log(event.key);
 }
