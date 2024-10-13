@@ -36,7 +36,7 @@ const currencies = {
 const ratesByBase = {};
 
 const myHeaders = new Headers();
-myHeaders.append('apikey', 'mL9YW2bdIeNVDxTVKsieo9ZGkH1UfU2l');
+myHeaders.append('apikey', 'apikey');
 const requestOptions = {
 	method: 'GET',
 	redirect: 'follow',
