@@ -1,4 +1,4 @@
-export const colors = {
+const colors = {
   black: '#000000',
   silver: '#C0C0C0',
   gray: '#808080',
@@ -155,4 +155,10 @@ export function isDark(colorName) {
   const g = parseInt(hex.substring(2, 4), 16);
   const b = parseInt(hex.substring(4, 6), 16);
   return r * 0.299 + g * 0.587 + b * 0.114 < 120;
+}
+
+export const sortedColors = Object.keys(colors).sort((a, b) => a.length - b.length);
+
+export function isValidColor(word) {
+  return colors[word] ? true : false;
 }
