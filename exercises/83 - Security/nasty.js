@@ -1,10 +1,11 @@
-import { sanitize } from 'dompurify';
+import DOMPurify from './node_modules/dompurify/dist/purify.es.mjs';
 
 const input = document.querySelector('[name="input"]');
 const output = document.querySelector('.output');
 const buttons = document.querySelectorAll('nav button');
 input.addEventListener('input', () => {
-  output.innerHTML = input.value.replace(/\n/g, '<br>');
+  const clean = DOMPurify.sanitize(input);
+  output.innerHTML = clean.replace(/\n/g, '<br>');
 });
 
 // trigger an input even on page load
